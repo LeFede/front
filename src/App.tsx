@@ -16,6 +16,7 @@ function App() {
   return (
     <>
       <h2>hola xd</h2>
+      <li>eee</li>
       <div>
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo" alt="Vite logo" />
