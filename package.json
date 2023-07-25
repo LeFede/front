@@ -23,10 +23,6 @@
     "singleQuote": true
   },
   "lint-staged": {
-    "**/*.{js,jsx}": [
-      "eslint --fix './src/**/**.js*' --no-error-on-unmatched-pattern",
-      "prettier --write"
-    ],
     "**/*.{ts,tsx}": [
       "eslint --fix './src/**/**.ts*' --no-error-on-unmatched-pattern",
       "prettier --write"
