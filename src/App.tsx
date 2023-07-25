@@ -9,6 +9,10 @@ function App() {
     e.target.innerHTML = 'asd'
   }
 
+  const handleSum = () => {
+    setCount(count + 1)
+  }
+
   return (
     <>
       <h2>hola xd</h2>
@@ -22,13 +26,7 @@ function App() {
       </div>
       <h1 onClick={handleClick}>Vite + React</h1>
       <div className="card">
-        <button
-          onClick={() => {
-            setCount((count) => count + 1)
-          }}
-        >
-          count is {count}
-        </button>
+        <button onClick={handleSum}>count is {count}</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
