@@ -6,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   const handleClick = (e: ClickEvent) => {
-    e.target.innerHTML = 'asd'
+    e.target.innerHTML = 'asd 🥵'
   }
 
   const handleSum = () => {
