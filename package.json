@@ -22,6 +22,16 @@
     "semi": false,
     "singleQuote": true
   },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint --fix './src/**/**.js*' --no-error-on-unmatched-pattern",
+      "prettier --write"
+    ],
+    "**/*.{ts,tsx}": [
+      "eslint --fix './src/**/**.ts*' --no-error-on-unmatched-pattern",
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "@types/node": "^20.4.5",
     "@types/react": "^18.2.15",

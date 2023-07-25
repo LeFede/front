@@ -7,8 +7,6 @@ function App() {
 
   const handleClick = (e: ClickEvent) => {
     e.target.innerHTML = 'asd'
-    const a = 3
-    const b = 3
   }
 
   return (
