@@ -1,0 +1,56 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "testui": "vitest --ui",
+    "dev": "vite",
+    "fix": "npx prettier --write './src/**/*.ts*' './cypress/e2e/*.ts*' && npx eslint --fix './src/**/*.ts*' './cypress/e2e/*.ts*'",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "test": "vitest --run --reporter verbose"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "@vitest/ui": "^0.33.0",
+    "cypress": "^12.17.2",
+    "eslint": "^8.45.0",
+    "eslint-config-cypress": "^0.28.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard-with-typescript": "^37.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "husky": "^8.0.3",
+    "jsdom": "^22.1.0",
+    "prettier": "^3.0.0",
+    "typescript": "5.0.4",
+    "vite": "^4.4.5",
+    "vitest": "^0.33.0"
+  }
+}
