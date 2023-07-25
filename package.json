@@ -24,7 +24,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npx prettier --write src/**/*.ts* && npx eslint --fix src/**/*.ts*"
     }
   },
   "devDependencies": {
