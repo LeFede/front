@@ -1,32 +1,23 @@
+import { Nav } from '@/components'
+import { useCounterStore } from '@/store'
 import { Outlet } from 'react-router-dom'
 
 export const Layout = () => {
+  const { count, increment, decrement } = useCounterStore()
+
+  const handleIncrement = (_: ClickEvent<HTMLButtonElement>) => {
+    increment(1)
+  }
+  const handleDecrement = (a: ClickEvent<HTMLButtonElement>) => {
+    decrement(1)
+  }
+
   return (
     <>
-      <nav className="container-fluid">
-        <ul>
-          <li>
-            <a href="#">Link1</a>
-          </li>
-          <li>
-            <a href="#">Link2</a>
-          </li>
-          <li>
-            <a href="#">Link3</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="#">Link4</a>
-          </li>
-          <li>
-            <a href="#">Link5</a>
-          </li>
-          <li>
-            <a href="#">Link6</a>
-          </li>
-        </ul>
-      </nav>
+      {count}
+      <button onClick={handleIncrement}>+</button>
+      <button onClick={handleDecrement}>-</button>
+      <Nav />
       <Outlet />
       {/* <footer className="container-fluid">
         <hr />
