@@ -44,7 +44,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': ['off'],
     '@typescript-eslint/no-explicit-any': 'error',
-    // 'no-console': ['error'],
+    'no-console': ['error'],
     'react/jsx-tag-spacing': ['error'],
     'max-len': [
       'error',

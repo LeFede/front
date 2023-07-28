@@ -43,7 +43,6 @@ export const Form = () => {
   } = useForm<FormData>({ resolver: zodResolver(schema), mode: 'onChange' })
 
   const onSubmit = (data: FormData) => {
-    console.log(data)
     reset()
   }
 
@@ -94,6 +93,7 @@ export const Form = () => {
           <p>{errors.confirmPassword.message}</p>
         )}
       </label>
+
       <button type="submit" id="submit">
         Submit
       </button>
