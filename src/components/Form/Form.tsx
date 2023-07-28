@@ -42,7 +42,7 @@ export const Form = () => {
     trigger,
   } = useForm<FormData>({ resolver: zodResolver(schema), mode: 'onChange' })
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (_: FormData) => {
     reset()
   }
 
