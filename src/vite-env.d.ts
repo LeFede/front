@@ -1,5 +1,5 @@
 /// <reference types="vite/client" />
 
-interface ClickEvent extends React.MouseEvent<HTMLDivElement, MouseEvent> {
+interface ClickEvent<T> extends React.MouseEvent<T, MouseEvent> {
   target: HTMLElement
 }

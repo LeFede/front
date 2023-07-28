@@ -1,0 +1,45 @@
+.label::after {
+  content: 'AAAJK';
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: red;
+  width: 100px;
+  height: 100px;
+}
+
+.label {
+  position: relative;
+  content: 'as';
+}
+
+.div {
+  content: '🤔';
+  /* position: absolute; */
+  /* transform: translate(-100%, 50%); */
+  /* top: 0; */
+  /* left: 0; */
+  /* display: block;
+  position: relative; */
+}
+
+input[type='password']:has(~ input[type='checkbox']) {
+  background-image: none;
+}
+
+input[type='password'] ~ input[type='checkbox'] {
+  position: absolute;
+  display: inline;
+  content: 'aaa';
+  transform: translate(-175%, 75%);
+  margin: 0;
+  user-select: none;
+}
+
+input[type='password'] ~ input[type='checkbox']:hover {
+  cursor: pointer;
+}
+
+label p {
+  color: var(--red);
+}

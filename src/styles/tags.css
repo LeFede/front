@@ -1,0 +1,29 @@
+hr {
+  margin: 10px 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body {
+  background-image: url('/wave.svg');
+  background-position: bottom;
+}
+
+nav {
+  position: fixed;
+  background: var(--background-color);
+  box-shadow: 0 1px 0 var(--nav-border-color);
+}
+
+main {
+  padding-top: calc(var(--block-spacing-vertical) + 3.5rem);
+  padding-bottom: calc(var(--block-spacing-vertical));
+}
+
+footer {
+  /* position: absolute;
+  bottom: 0;
+  width: 100%; */
+}

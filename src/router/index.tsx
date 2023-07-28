@@ -1,11 +1,25 @@
-import { Page } from '@/pages'
+import { Layout } from '@/layouts'
+import { Page, Pico, FormPage } from '@/pages'
 import { createBrowserRouter } from 'react-router-dom'
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Page />,
+    element: <Layout />,
     errorElement: <h1>Not Found</h1>,
-    children: [],
+    children: [
+      {
+        index: true,
+        element: <Page />,
+      },
+      {
+        path: 'pico',
+        element: <Pico />,
+      },
+      {
+        path: 'form',
+        element: <FormPage />,
+      },
+    ],
   },
 ])

@@ -1,20 +1,10 @@
-import { useState } from 'react'
-
-type ComponentChildren =
-  | Array<React.ReactElement<HTMLParagraphElement>>
-  | React.ReactElement<HTMLParagraphElement>
-
-interface ComponentProps {
-  title: string
-  action: () => void
-  children: ComponentChildren
-}
+import { useToggle } from '@/hooks'
 
 export const Component = ({ title, children, action }: ComponentProps) => {
-  const [show, setShow] = useState(false)
+  const [show, toggle] = useToggle(false)
 
   const handleShow = () => {
-    setShow(!show)
+    toggle()
   }
 
   return (
