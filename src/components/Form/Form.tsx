@@ -1,3 +1,4 @@
+import ERRORS from '@/errors'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z, type ZodType } from 'zod'
@@ -16,22 +17,19 @@ const schema: ZodType<FormData> = z
   .object({
     name: z
       .string()
-      .refine((value) => value !== '', 'Cannot be empty')
-      .refine(
-        (value) => /^[A-Za-z0-9_]+$/.test(value),
-        'Only alphanumeric and underscore characters are allowed',
-      )
-      .refine((value) => !/\d/.test(value[0]), 'Name must start with a letter')
-      .refine((value) => /^.{3,30}$/.test(value), '3 ~ 30 characters'),
+      .refine((value) => value !== '', ERRORS.EMPTY)
+      .refine((value) => /^[A-Za-z0-9_]+$/.test(value), ERRORS.ALPHANUMERIC)
+      .refine((value) => !/\d/.test(value[0]), ERRORS.START_WITH_LETTER)
+      .refine((value) => /^.{3,30}$/.test(value), ERRORS.NAME_LENGTH),
     // .max(30)
     password: z
       .string()
-      .refine((value) => value !== '', 'Cannot be empty')
-      .refine((value) => /.{8,30}/.test(value), '8 ~ 30 characters'),
+      .refine((value) => value !== '', ERRORS.EMPTY)
+      .refine((value) => /.{8,30}/.test(value), ERRORS.PASSWORD_LENGTH),
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: 'Passwords do not match',
+    message: ERRORS.PASSWORDS_NOT_MATCH,
     path: ['confirmPassword'],
   })
 
@@ -45,6 +43,7 @@ export const Form = () => {
   } = useForm<FormData>({ resolver: zodResolver(schema), mode: 'onChange' })
 
   const onSubmit = (data: FormData) => {
+    console.log(data)
     reset()
   }
 
