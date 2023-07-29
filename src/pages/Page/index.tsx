@@ -13,7 +13,7 @@ export const Page = () => {
       <div>
         <section>
           <hgroup>
-            <h1>Vole IT</h1>
+            <h1>Volpe IT</h1>
             <h2>dream a better world</h2>
           </hgroup>
           <p>
