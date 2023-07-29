@@ -1,15 +1,17 @@
+import { Link } from 'react-router-dom'
+
 export const Nav = () => {
   return (
     <nav className="container-fluid">
       <ul>
         <li>
-          <a href="#">Link1</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#">Link2</a>
+          <Link to="/form">Form</Link>
         </li>
         <li>
-          <a href="#">Link3</a>
+          <Link to="/pico">Pico</Link>
         </li>
       </ul>
       <ul>

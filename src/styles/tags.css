@@ -2,8 +2,8 @@ hr {
   margin: 10px 0;
 }
 
-#root {
-  min-height: 100vh;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,6 +15,7 @@ nav {
   position: fixed;
   background: var(--background-color);
   box-shadow: 0 1px 0 var(--nav-border-color);
+  z-index: 100;
 }
 
 main {

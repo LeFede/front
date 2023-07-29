@@ -5,3 +5,45 @@
 .sb {
   justify-content: space-between;
 }
+
+.hide {
+  opacity: 0;
+  translate: -10px;
+  animation-name: fadeOut;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+.inView {
+  
+  animation-name: fadeIn;
+  /* animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse; */
+  /* animation-direction: alternate; */
+  /* animation-name: fadeIn; */
+  /* animation-direction: normal;
+  animation-duration: 0.8s;
+  animation-fill-mode: backwards; */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: inherit;
+    translate: inherit;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: inherit;
+    translate: inherit;
+  }
+  100% {
+    opacity: 0;
+  }
+}

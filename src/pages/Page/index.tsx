@@ -1,10 +1,19 @@
+import { Slider } from '@/components'
+import { useInView } from 'react-intersection-observer'
+
 export const Page = () => {
+  const { ref, inView } = useInView({
+    threshold: 1,
+    //  triggerOnce: true,
+    rootMargin: '-100px 0px -100px 0px',
+  })
+
   return (
     <main className="container">
       <div>
         <section>
           <hgroup>
-            <h1>Volpe IT</h1>
+            <h1>Greetings folk!</h1>
             <h2>dream a better world</h2>
           </hgroup>
           <p>
@@ -41,8 +50,10 @@ export const Page = () => {
         </section>
         <section>
           <hgroup>
-            <h2>Escalate quickly 📈</h2>
-            <h3>enroll with us</h3>
+            <h2 ref={ref} className={`${inView ? 'inView' : ''} hide`}>
+              Escalate quickly 📈
+            </h2>
+            <h3 className={`${inView ? 'inView' : ''} hide`}>enroll with us</h3>
           </hgroup>
           <p>
             &quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -61,6 +72,8 @@ export const Page = () => {
             pariatur?&quot;
           </p>
         </section>
+
+        <Slider />
       </div>
       {/* <Component title="hola" action={doSomething}>
         <p>hola</p>

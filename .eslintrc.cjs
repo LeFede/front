@@ -46,7 +46,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'error',
     'no-console': ['error'],
     'react/jsx-tag-spacing': ['error'],
-    'no-unused-vars': ['error'],
     'max-len': [
       'error',
       {

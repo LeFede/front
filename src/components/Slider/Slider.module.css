@@ -1,0 +1,79 @@
+.sliderWrapper {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 16/9;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.5rem;
+  overflow-x: hidden;
+}
+
+/* TODO: fix css */
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.sliderNav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.sliderNav a {
+  width: 0.5rem;
+  aspect-ratio: 1/1;
+  /* background-color: #fff; */
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+  user-select: none;
+  padding: 1rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sliderNav a:active {
+  background: none;
+  user-select: none;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+.sliderNav a:target {
+  -webkit-tap-highlight-color: transparent;
+  background: none;
+  all: unset;
+  user-select: none;
+  outline: none !important;
+}
+
+.sliderNav a:focus {
+  outline: none !important;
+}
+
+.sliderNav a::before {
+  width: 0.5rem;
+  aspect-ratio: 1/1;
+  background-color: #fff;
+  opacity: 0.75;
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.sliderNav a:hover {
+  opacity: 1;
+}
