@@ -19,7 +19,11 @@ export default defineConfig({
   //   '.husky/**',
   // ],
   build: {
-    exclude: ['cypress/**'],
+    rollupOptions: {
+      output: {
+        exclude: ['cypress/**'],
+      },
+    },
   },
   plugins: [react()],
   test: {
