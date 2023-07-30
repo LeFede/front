@@ -47,6 +47,7 @@
     "@vitejs/plugin-react-swc": "^3.3.2",
     "@vitest/ui": "^0.33.0",
     "cypress": "^12.17.2",
+    "cypress-vite": "^1.4.2",
     "eslint": "^8.45.0",
     "eslint-config-cypress": "^0.28.0",
     "eslint-config-prettier": "^8.8.0",
