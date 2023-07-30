@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Volpe Template</title>
   </head>
-  <body>
+  <body class="no-transition">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <script defer>
+      // TODO: move from here
+      window.onload = setTimeout(() => {
+        // document.querySelector('body').classList.remove('no-transition')
+      }, 500)
+    </script>
   </body>
 </html>

@@ -1,17 +1,22 @@
 import { Slider } from '@/components'
 import { useInView } from 'react-intersection-observer'
 
-export const Page = () => {
-  const { ref, inView } = useInView({
-    threshold: 1,
-    //  triggerOnce: true,
-    rootMargin: '-100px 0px -100px 0px',
-  })
+const options = {
+  threshold: 1,
+  //  triggerOnce: true,
+  rootMargin: '200px 0px 100px 0px',
+  triggerOnce: true,
+}
 
+export const Page = () => {
+  const [r1, v1] = useInView(options)
+  const [r2, v2] = useInView(options)
+  const [r3, v3] = useInView(options)
+  // const [r4, v4] = useInView(options)
   return (
     <main className="container">
       <div>
-        <section>
+        <section ref={r1} className={`${v1 ? 'show' : ''} hide`}>
           <hgroup>
             <h1>Volpe IT</h1>
             <h2>dream a better world</h2>
@@ -26,7 +31,7 @@ export const Page = () => {
             culpa qui officia deserunt mollit anim id est laborum.&quot;
           </p>
         </section>
-        <section>
+        <section ref={r2} className={`${v2 ? 'show' : ''} hide`}>
           <hgroup>
             <h2>Climb 🧗</h2>
             <h3>things are easier now</h3>
@@ -48,12 +53,10 @@ export const Page = () => {
             pariatur?&quot;
           </p>
         </section>
-        <section>
+        <section ref={r3} className={`${v3 ? 'show' : ''} hide`}>
           <hgroup>
-            <h2 ref={ref} className={`${inView ? 'inView' : ''} hide`}>
-              Escalate quickly 📈
-            </h2>
-            <h3 className={`${inView ? 'inView' : ''} hide`}>enroll with us</h3>
+            <h2>Escalate quickly 📈</h2>
+            <h3>enroll with us</h3>
           </hgroup>
           <p>
             &quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem

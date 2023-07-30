@@ -42,7 +42,8 @@ export const Form = () => {
     trigger,
   } = useForm<FormData>({ resolver: zodResolver(schema), mode: 'onChange' })
 
-  const onSubmit = (_: FormData) => {
+  const onSubmit = (data: FormData) => {
+    alert(JSON.stringify(data))
     reset()
   }
 

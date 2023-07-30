@@ -5,3 +5,22 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  /* --animation-in-view: 0.4s ease 0s fadeIn forwards;
+  --animation-out-view: 0.4s ease 0s fadeOut forwards; */
+}
+body.no-transition {
+  /* --animation-in-view: 0s ease 0s fadeIn forwards !important;
+  --animation-out-view: 0s ease 0s fadeOut forwards !important; */
+}
+
+.no-transition * {
+  /* -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important; */
+
+  /* animation-name: none; */
+}

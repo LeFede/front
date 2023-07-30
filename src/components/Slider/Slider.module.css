@@ -2,16 +2,17 @@
   position: relative;
   max-width: 48rem;
   margin: 0 auto;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 .slider {
   display: flex;
   aspect-ratio: 16/9;
   overflow-x: auto;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   scroll-snap-type: x mandatory;
-  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 1);
+  outline: 1px solid black;
   border-radius: 0.5rem;
   overflow-x: hidden;
 }
@@ -45,9 +46,9 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.sliderNav a:hover {
+/* .sliderNav a:hover {
   background: none !important;
-}
+} */
 
 .sliderNav a:active {
   background: none;
