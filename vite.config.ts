@@ -19,6 +19,9 @@ export default defineConfig({
       '@root': resolve(__dirname, '.'),
     },
   },
+  optimizeDeps: {
+    exclude: ['cypress', '.husky', '__test__'],
+  },
   build: {
     manifest: true,
     rollupOptions: {
