@@ -13,6 +13,17 @@ export default defineConfig({
       '@root': resolve(__dirname, '.'),
     },
   },
+  build: {
+    manifest: true,
+    rollupOptions: {
+      external: ['cypress/**', '__test__/**', '.husky/**'],
+    },
+  },
+  // exclude: [
+  //   'cypress/**',
+  //   '__test__/**',
+  //   '.husky/**',
+  // ],
   plugins: [react()],
   test: {
     environment: 'jsdom',
