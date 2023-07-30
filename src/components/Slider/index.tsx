@@ -12,7 +12,7 @@ export const Slider = () => {
           <img id="slide4" src={slide4} alt="3D" />
         </div>
         <div className={styles.sliderNav}>
-          <a href="#slide1"></a>
+          <a draggable="false" href="#slide1"></a>
           <a href="#slide2"></a>
           <a href="#slide3"></a>
         </div>

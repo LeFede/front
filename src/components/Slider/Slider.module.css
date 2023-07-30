@@ -45,6 +45,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.sliderNav a:hover {
+  background: none !important;
+}
+
 .sliderNav a:active {
   background: none;
   user-select: none;
