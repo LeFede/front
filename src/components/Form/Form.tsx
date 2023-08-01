@@ -58,8 +58,8 @@ export const Form = () => {
 
   const onSubmit = (_: FormData) => {
     // alert(JSON.stringify(data))
-    // reset()
-    setShowModal(true)
+    reset()
+    // setShowModal(true)
   }
 
   return (
