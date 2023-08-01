@@ -22,8 +22,9 @@
     "paths": {
       "@types": ["./src/vite-env.d.ts"],
       "@/*": ["./src/*"]
-    }
+    },
     // "types": ["vitest/global"]
+    "types": ["cypress"]
   },
   "include": [
     "src",
