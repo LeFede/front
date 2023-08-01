@@ -8,5 +8,6 @@ export default defineConfig({
       on('file:preprocessor', vitePreprocessor())
     },
     video: false,
+    screenshotOnRunFailure: false,
   },
 })

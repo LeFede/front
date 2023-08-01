@@ -22,12 +22,13 @@
     "paths": {
       "@types": ["./src/vite-env.d.ts"],
       "@/*": ["./src/*"]
-    },
-    "types": ["vitest/globals"]
+    }
+    // "types": ["vitest/global"]
   },
   "include": [
-    "src"
-    //"cypress", "__test__"
+    "src",
+    "cypress",
+    "__test__" //"cypress", "__test__"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
