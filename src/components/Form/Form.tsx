@@ -1,7 +1,10 @@
-import ERRORS from '@/errors'
+import { ERRORS } from '@/errors'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-hot-toast'
 import { z, type ZodType } from 'zod'
+import { Modal } from '..'
 import styles from './Form.module.css'
 
 // TODO: find a way to better handle this
@@ -13,19 +16,28 @@ interface FormData {
   confirmPassword: string
 }
 
+const onlyAlphaNumericAndUnderscoreRegexp = (value: string) =>
+  /^[A-Za-z0-9_]+$/.test(value)
+
+const startsWithLetter = (value: string) => !/\d/.test(value[0])
+const lengthRegexp = (min: number, max: number) => (value: string) =>
+  new RegExp(`^.{${min},${max}}$`).test(value)
+const emptyRegexp = (value: string) => value !== ''
+const lengthRegexpN = (min: number, max: number) => lengthRegexp(min, max)
+
 const schema: ZodType<FormData> = z
   .object({
     name: z
       .string()
-      .refine((value) => value !== '', ERRORS.EMPTY)
-      .refine((value) => /^[A-Za-z0-9_]+$/.test(value), ERRORS.ALPHANUMERIC)
-      .refine((value) => !/\d/.test(value[0]), ERRORS.START_WITH_LETTER)
-      .refine((value) => /^.{3,30}$/.test(value), ERRORS.NAME_LENGTH),
+      .refine(emptyRegexp, ERRORS.EMPTY)
+      .refine(onlyAlphaNumericAndUnderscoreRegexp, ERRORS.ALPHANUMERIC)
+      .refine(startsWithLetter, ERRORS.START_WITH_LETTER)
+      .refine(lengthRegexpN(3, 30), ERRORS.NAME_LENGTH),
     // .max(30)
     password: z
       .string()
-      .refine((value) => value !== '', ERRORS.EMPTY)
-      .refine((value) => /.{8,30}/.test(value), ERRORS.PASSWORD_LENGTH),
+      .refine(emptyRegexp, ERRORS.EMPTY)
+      .refine(lengthRegexpN(8, 30), ERRORS.PASSWORD_LENGTH),
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
@@ -34,6 +46,8 @@ const schema: ZodType<FormData> = z
   })
 
 export const Form = () => {
+  const [showModal, setShowModal] = useState(false)
+
   const {
     register,
     handleSubmit,
@@ -42,9 +56,10 @@ export const Form = () => {
     trigger,
   } = useForm<FormData>({ resolver: zodResolver(schema), mode: 'onChange' })
 
-  const onSubmit = (data: FormData) => {
-    alert(JSON.stringify(data))
-    reset()
+  const onSubmit = (_: FormData) => {
+    // alert(JSON.stringify(data))
+    // reset()
+    setShowModal(true)
   }
 
   return (
@@ -98,6 +113,41 @@ export const Form = () => {
       <button type="submit" id="submit">
         Submit
       </button>
+
+      <Modal
+        title="hello"
+        leftButton="cancel"
+        rightButton="😎"
+        open={showModal}
+        onOutsideClick={() => {
+          // console.log('outside click')
+          setShowModal(false)
+          toast.error('Canceled')
+        }}
+        onCancel={() => {
+          setShowModal(false)
+          toast.error('Canceled')
+        }}
+        onAccept={() => {
+          setShowModal(false)
+          toast.success('Thank you!')
+          reset()
+        }}
+        onClose={() => {
+          setShowModal(false)
+          toast.error('Canceled')
+        }}
+      >
+        <p>
+          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.&quot;
+        </p>
+      </Modal>
     </form>
   )
 }

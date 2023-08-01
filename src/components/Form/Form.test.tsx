@@ -1,3 +1,4 @@
+import { ERRORS } from '@/errors'
 import { $ } from '@/utils'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -24,10 +25,10 @@ describe('Form name input', () => {
     testedInput = $<HTMLInputElement>('#name')
   })
 
-  it('errors when first character is not a letter', async () => {
+  it('errors when first character is not a letter or underscore', async () => {
     await userEvent.type(testedInput, '1j')
     expect(testedInput.getAttribute('aria-invalid')).toBe('true')
-    expect(screen.getByText('Name must start with a letter')).toBeDefined()
+    expect(screen.getByText(ERRORS.START_WITH_LETTER)).toBeDefined()
   })
 
   it('errors after first type, on blank input', async () => {

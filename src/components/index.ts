@@ -1,4 +1,5 @@
 export * from './Component'
 export * from './Form'
+export * from './Modal'
 export * from './Nav'
 export * from './Slider'

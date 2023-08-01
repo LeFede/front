@@ -1,4 +1,4 @@
-import ERRORS from '../../src/errors'
+import { ERRORS } from '../../src/errors'
 
 describe('Home', () => {
   it('renders correctly', () => {

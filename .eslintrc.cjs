@@ -35,7 +35,9 @@ module.exports = {
   plugins: ['react', 'react-refresh'],
   parser: '@typescript-eslint/parser',
   rules: {
-    'eol-last': 1,
+    semi: ['error', 'never'],
+    quotes: ['error', 'single', { avoidEscape: true }],
+    'eol-last': ['error', 'always'],
     'no-multiple-empty-lines': ['error', { max: 1 }],
     'react-refresh/only-export-components': [
       'warn',

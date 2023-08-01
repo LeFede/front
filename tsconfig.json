@@ -26,10 +26,6 @@
     // "types": ["vitest/global"]
     "types": ["cypress"]
   },
-  "include": [
-    "src",
-    "cypress",
-    "__test__" //"cypress", "__test__"
-  ],
+  "include": ["src", "cypress", "__test__"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
