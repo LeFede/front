@@ -2,9 +2,9 @@ import { Slider } from '@/components'
 import { useInView } from 'react-intersection-observer'
 
 const options = {
-  threshold: 1,
+  threshold: 0.5,
   //  triggerOnce: true,
-  rootMargin: '200px 0px 100px 0px',
+  rootMargin: '0px 0px 0px 0px',
   triggerOnce: true,
 }
 
@@ -13,6 +13,7 @@ export const Page = () => {
   const [r2, v2] = useInView(options)
   const [r3, v3] = useInView(options)
   // const [r4, v4] = useInView(options)
+
   return (
     <main className="container">
       <div>

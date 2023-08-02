@@ -50,6 +50,7 @@ export const Modal = ({
                 className="secondary"
                 data-target="modal-example"
                 onClick={onCancel}
+                id="form-modal-cancel"
               >
                 {leftButton}
               </a>
@@ -61,6 +62,7 @@ export const Modal = ({
                 role="button"
                 data-target="modal-example"
                 onClick={onAccept}
+                id="form-modal-confirm"
               >
                 {rightButton}
               </a>

@@ -48,14 +48,14 @@ describe('Form name input', () => {
 
   it('errors when input is too short', async () => {
     input = 'xd'
-    expected = /3 ~ 30 characters/
+    expected = new RegExp(ERRORS.NAME_LENGTH)
     await testInputAndExpectedError(testedInput, input, expected)
     expect(testedInput.getAttribute('aria-invalid')).toBe('true')
   })
 
   it('errors when input is too long', async () => {
     input = 'r234567890123456789012345678901'
-    expected = /3 ~ 30 characters/
+    expected = new RegExp(ERRORS.NAME_LENGTH)
     await testInputAndExpectedError(testedInput, input, expected)
     expect(testedInput.getAttribute('aria-invalid')).toBe('true')
   })
@@ -81,13 +81,13 @@ describe('Form password', () => {
 
   it('errors when password input is too short', async () => {
     input = '1234567'
-    expected = /8 ~ 30 characters/
+    expected = new RegExp(ERRORS.PASSWORD_LENGTH)
     await testInputAndExpectedError(testedInput, input, expected)
   })
 
   it('errors when passwords do not match', async () => {
     input = '12345678'
-    expected = /Passwords do not match/
+    expected = new RegExp(ERRORS.PASSWORDS_NOT_MATCH)
     await userEvent.type(testedInput, input)
     expect(screen.getByText(expected)).toBeDefined()
   })
@@ -121,6 +121,10 @@ describe('Form submit', () => {
     await userEvent.type(confirmPassword, '12341234')
 
     await userEvent.click(submit)
+
+    const formModalConfirm = $<HTMLInputElement>('#form-modal-confirm')
+
+    await userEvent.click(formModalConfirm)
 
     expect(name.value).toBe('')
     expect(password.value).toBe('')

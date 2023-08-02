@@ -3,4 +3,4 @@
 
 pnpm build
 npm run test
-npm run cypress:run
+npm run cy:run

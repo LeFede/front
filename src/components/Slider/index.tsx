@@ -29,8 +29,9 @@ export const Slider = () => {
           <a
             draggable="false"
             href="#slide1"
-            onDragEnd={handleBlur}
+            // onDragEnd={handleBlur}
             onMouseDown={handleBlur}
+            // onMouseUp={handleBlur}
           ></a>
 
           <a

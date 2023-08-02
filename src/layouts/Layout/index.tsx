@@ -5,9 +5,9 @@ import { Outlet } from 'react-router-dom'
 export const Layout = () => {
   return (
     <>
-      <div>
-        <Toaster reverseOrder={true} />
-      </div>
+      {/* <div> */}
+      <Toaster reverseOrder={true} />
+      {/* </div> */}
       <Nav />
       <Outlet />
       {/* <footer className="container-fluid">

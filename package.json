@@ -5,14 +5,14 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "testui": "vitest --ui",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "dev": "vite",
     "fix": "npx prettier --write './src/**/*.ts*' './cypress/e2e/*.ts*' && npx eslint --fix './src/**/*.ts*' './cypress/e2e/*.ts*'",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest --run --reporter verbose",
+    "testui": "vitest --ui",
     "testw": "clear && vitest --watch"
   },
   "dependencies": {

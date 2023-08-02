@@ -37,5 +37,14 @@ describe('Form', () => {
     cy.contains(ERRORS.PASSWORDS_NOT_MATCH).should('not.exist')
     cy.contains(ERRORS.PASSWORD_LENGTH).should('not.exist')
     cy.contains(ERRORS.START_WITH_LETTER).should('not.exist')
+
+    const submit = cy.get('#submit')
+    submit.click()
+    const formModalInput = cy.get('#form-modal-confirm')
+    formModalInput.click()
+
+    nameInput.should('have.value', '')
+    passwordInput.should('have.value', '')
+    confirmPasswordInput.should('have.value', '')
   })
 })
