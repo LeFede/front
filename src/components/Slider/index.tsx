@@ -31,6 +31,7 @@ export const Slider = () => {
             href="#slide1"
             // onDragEnd={handleBlur}
             onMouseDown={handleBlur}
+
             // onMouseUp={handleBlur}
           ></a>
 

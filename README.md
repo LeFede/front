@@ -14,8 +14,8 @@ npm run dev
 #### Testing:
 
 ```sh
-npm run cypress:run
-npm run cypress:open
+npm run cy:run
+npm run cy:open
 ```
 
 ```sh
@@ -35,6 +35,7 @@ npm run testw # watch
 - react
 
 #### State
+
 - zustand
 
 #### Styles
