@@ -55,7 +55,7 @@ module.exports = {
         // tabWidth: 2,
         // "ignoreComments": true, //"comments": 80
         // "ignoreUrls": true,
-        // "ignoreStrings": true,
+        ignoreStrings: true,
         ignoreTemplateLiterals: true,
       },
     ],
